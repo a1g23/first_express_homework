@@ -24,6 +24,18 @@ app.get("/greeting/:name", (req, res) => {
 })
 
 
+// Tip Calculator
+// Your app should have a route of '/tip' and it should expect 2 params. One should be total and one should be tipPercentage.
+
+// When hitting the route, the page should display how much your tip will be based on the total amount of the bill and the tip percentage. (ex. hitting '/tip/100/20' should display 20 on the page).
+
+app.get("/tip/:total/:tipPecentage", (req, res) => {
+    const total = req.params.total
+    const percentage = req.params.tipPecentage
+    const tip = total * (percentage / 100)
+    res.send(`<h2>${tip}</h2>`)
+})
+
 
 
 
